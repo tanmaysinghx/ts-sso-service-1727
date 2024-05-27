@@ -11,6 +11,6 @@ COPY target/ts-sso-service-1727-0.0.1-SNAPSHOT.jar ts-sso-service-1727-0.0.1-SNA
 EXPOSE 1727
 
 # Command to run your application
-CMD ["java", "-jar", ts-sso-service-1727-0.0.1-SNAPSHOT.jar"]
+CMD ["java", "-jar", "ts-sso-service-1727-0.0.1-SNAPSHOT.jar"]
 
 # End of docker file
