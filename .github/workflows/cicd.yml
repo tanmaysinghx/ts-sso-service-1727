@@ -1,4 +1,4 @@
-name: CI/CD
+name: CICD
 
 on:
   push:
@@ -6,9 +6,8 @@ on:
       - main
 
 jobs:
-  build_and_deploy:
+  build:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout source
         uses: actions/checkout@v3
@@ -36,11 +35,20 @@ jobs:
         run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Build Docker image
-        run: |
-          docker build -t localhost:5000/ts-sso-service-1727:latest .
-          docker push localhost:5000/ts-sso-service-1727:latest
+        run: docker build -t tanmaysinghx/ts-sso-service-1727:latest .
 
-      - name: Deploy to Local Docker Server
-        run: |
-          docker pull localhost:5000/ts-sso-service-1727:latest
-          docker run -d -p 8080:8080 --name ts-sso-service-container localhost:5000/ts-sso-service-1727:latest
+      - name: Publish image to Docker Hub
+        run: docker push tanmaysinghx/ts-sso-service-1727:latest
+
+  deploy:
+    needs: build
+    runs-on: ec2-user
+    steps:
+      - name: Pull Image from Docker Hub
+        run: sudo docker pull tanmaysinghx/ts-app-auth-service:latest
+
+      - name: Delete old container
+        run: sudo docker rm -f ts-app-auth-service-container || true
+
+      - name: Run Docker container
+        run: sudo docker run -d -p 8080:8080 --name ts-app-auth-service-container tanmaysinghx/ts-app-auth-service:latest
