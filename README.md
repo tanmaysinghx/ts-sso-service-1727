@@ -38,7 +38,7 @@ OAuth2 and JWT serve different purposes. OAuth2 defines a protocol that specifie
    git clone https://github.com/your-repo/ts-sso-service-1727.git
    cd ts-sso-service-1727
    
-2. **Set Up MySQL Database
+2. **Set Up MySQL Database**
 
    ```sh
    spring.datasource.url=jdbc:mysql://localhost:3306/your_database
@@ -46,10 +46,9 @@ OAuth2 and JWT serve different purposes. OAuth2 defines a protocol that specifie
    spring.datasource.password=your_password
    spring.jpa.hibernate.ddl-auto=update
 
-3.  **Build and Run the Project
+3.  **Build and Run the Project**
 
    ```sh
    mvn clean install
    mvn spring-boot:run
 
-4. 
