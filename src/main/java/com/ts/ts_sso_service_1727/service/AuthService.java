@@ -54,8 +54,11 @@ public class AuthService {
             log.info("[AuthService:userSignInAuth] Access token for user:{}, has been generated",userInfoEntity.getUserName());
             return  AuthResponseDto.builder()
                     .accessToken(accessToken)
-                    .accessTokenExpiry(15 * 60)
+                    .refreshToken(refreshToken)
+                    .accessTokenExpiry(5 * 60)
                     .userName(userInfoEntity.getUserName())
+                    .userEmail(userInfoEntity.getEmailId())
+                    .userRole(userInfoEntity.getRoles())
                     .tokenType(TokenType.Bearer)
                     .build();
 
@@ -168,4 +171,7 @@ public class AuthService {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST,e.getMessage());
         }
     }
+
+
+
 }
