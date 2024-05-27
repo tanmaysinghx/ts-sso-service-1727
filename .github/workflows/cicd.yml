@@ -40,7 +40,7 @@ jobs:
       - name: Publish image to Docker Hub
         run: docker push tanmaysinghx/ts-sso-service-1727:latest
 
-deploy_to_docker_hub:
+deploy:
     needs: build
     runs-on: ubuntu-latest
     steps:
