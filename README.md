@@ -26,7 +26,7 @@ OAuth2 and JWT serve different purposes. OAuth2 defines a protocol that specifie
 
 ### Prerequisites
 
-- Java Development Kit (JDK) 11 or higher
+- Java Development Kit (JDK) 21
 - Apache Maven 3.6.0 or higher
 - MySQL database
 
@@ -37,3 +37,19 @@ OAuth2 and JWT serve different purposes. OAuth2 defines a protocol that specifie
    ```sh
    git clone https://github.com/your-repo/ts-sso-service-1727.git
    cd ts-sso-service-1727
+   
+2. **Set Up MySQL Database
+
+   ```sh
+   spring.datasource.url=jdbc:mysql://localhost:3306/your_database
+   spring.datasource.username=your_username
+   spring.datasource.password=your_password
+   spring.jpa.hibernate.ddl-auto=update
+
+3.  **Build and Run the Project
+
+   ```sh
+   mvn clean install
+   mvn spring-boot:run
+
+4. 
