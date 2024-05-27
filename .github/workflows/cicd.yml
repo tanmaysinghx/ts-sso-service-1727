@@ -52,3 +52,17 @@ jobs:
 
       - name: Run Docker container
         run: sudo docker run -d -p 8080:8080 --name ts-app-auth-service-container tanmaysinghx/ts-app-auth-service:latest
+
+
+deploy_to_docker_hub:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Pull Image from Docker Hub
+        run: docker pull ${{ secrets.DOCKER_USERNAME }}/ts-sso-service-1727:latest
+
+      # Add steps to deploy to a local Docker server here
+      - name: Deploy to Local Docker Server
+        run: |
+          docker tag ${{ secrets.DOCKER_USERNAME }}/ts-sso-service-1727:latest localhost:5000/ts-sso-service-1727:latest
+          docker push localhost:5000/ts-sso-service-1727:latest
