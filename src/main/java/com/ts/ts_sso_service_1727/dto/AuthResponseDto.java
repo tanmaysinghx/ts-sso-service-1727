@@ -18,6 +18,9 @@ public class AuthResponseDto {
     @JsonProperty("access_token")
     private String accessToken;
 
+    @JsonProperty("refresh_token")
+    private String refreshToken;
+
     @JsonProperty("access_token_expiry")
     private int accessTokenExpiry;
 
@@ -26,5 +29,11 @@ public class AuthResponseDto {
 
     @JsonProperty("user_name")
     private String userName;
+
+    @JsonProperty("user_email")
+    private String userEmail;
+
+    @JsonProperty("user_role")
+    private String userRole;
 
 }

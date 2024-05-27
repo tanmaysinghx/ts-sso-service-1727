@@ -11,6 +11,8 @@ public class SpringSecurityApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(SpringSecurityApplication.class, args);
+
+        System.out.println("ts-service-registry-1001 started on port number: 1727");
     }
 
 }

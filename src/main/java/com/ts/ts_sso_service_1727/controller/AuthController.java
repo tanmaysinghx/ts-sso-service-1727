@@ -31,7 +31,6 @@ public class AuthController {
     private final AuthService authService;
     @PostMapping("/sign-in")
     public ResponseEntity<?> authenticateUser(Authentication authentication,HttpServletResponse response){
-        log.info("Tanmay Log - 1",authentication);
         return ResponseEntity.ok(authService.getJwtTokensAfterAuthentication(authentication,response));
     }
 

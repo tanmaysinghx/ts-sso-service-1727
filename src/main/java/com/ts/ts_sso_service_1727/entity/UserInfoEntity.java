@@ -23,7 +23,6 @@ public class UserInfoEntity {
     @Column(name = "USER_NAME")
     private String userName;
 
-
     @Column(nullable = false, name = "EMAIL_ID", unique = true)
     private String emailId;
 

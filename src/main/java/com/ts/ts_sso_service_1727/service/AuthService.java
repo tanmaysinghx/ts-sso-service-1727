@@ -154,8 +154,11 @@ public class AuthService {
             log.info("[AuthService:registerUser] User:{} Successfully registered",savedUserDetails.getUserName());
             return   AuthResponseDto.builder()
                     .accessToken(accessToken)
+                    .refreshToken(refreshToken)
                     .accessTokenExpiry(5 * 60)
                     .userName(savedUserDetails.getUserName())
+                    .userEmail(savedUserDetails.getEmailId())
+                    .userRole(savedUserDetails.getRoles())
                     .tokenType(TokenType.Bearer)
                     .build();
 
