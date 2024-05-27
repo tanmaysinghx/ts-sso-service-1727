@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 import java.util.Optional;
 
 /**
- * @author atquil
+ * @author tanmay
  */
 @Repository
 public interface UserInfoRepo extends JpaRepository<UserInfoEntity,Long> {

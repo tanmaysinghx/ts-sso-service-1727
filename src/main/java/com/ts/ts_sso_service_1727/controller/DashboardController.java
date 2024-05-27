@@ -16,7 +16,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * @author atquil
+ * @author tanmay
  */
 @RestController
 @RequestMapping("/api")

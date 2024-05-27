@@ -1,7 +1,7 @@
 package com.ts.ts_sso_service_1727.config.jwtAuth;
 
 /**
- * @author atquil
+ * @author tanmay
  */
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

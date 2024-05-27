@@ -12,7 +12,7 @@ import org.springframework.security.web.authentication.logout.LogoutHandler;
 import org.springframework.stereotype.Service;
 
 /**
- * @author atquil
+ * @author tanmay
  */
 @Service
 @Slf4j

@@ -4,7 +4,7 @@ import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotEmpty;
 
 /**
- * @author atquil
+ * @author tanmay
  */
 public record UserRegistrationDto (
         @NotEmpty(message = "User Name must not be empty")

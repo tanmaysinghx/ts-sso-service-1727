@@ -1,7 +1,7 @@
 package com.ts.ts_sso_service_1727.dto;
 
 /**
- * @author atquil
+ * @author tanmay
  */
 public enum TokenType {
     Bearer

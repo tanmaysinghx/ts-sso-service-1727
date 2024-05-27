@@ -6,7 +6,7 @@ import java.security.interfaces.RSAPrivateKey;
 import java.security.interfaces.RSAPublicKey;
 
 /**
- * @author atquil
+ * @author tanmay
  */
 @ConfigurationProperties(prefix = "jwt")
 public record RSAKeyRecord (RSAPublicKey rsaPublicKey, RSAPrivateKey rsaPrivateKey){

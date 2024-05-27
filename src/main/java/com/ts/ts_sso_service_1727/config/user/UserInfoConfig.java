@@ -10,7 +10,7 @@ import java.util.Arrays;
 import java.util.Collection;
 
 /**
- * @author atquil
+ * @author tanmay
  */
 @RequiredArgsConstructor
 public class UserInfoConfig implements UserDetails {
