@@ -59,7 +59,7 @@ public class SecurityConfig {
         return httpSecurity
                 .securityMatcher(new AntPathRequestMatcher("/sign-in/**"))
                 .csrf(AbstractHttpConfigurer::disable)
-                .authorizeHttpRequests(auth -> auth.anyRequest().authenticated())
+                //.authorizeHttpRequests(auth -> auth.anyRequest().authenticated()) // commented out June 2024 due to CORS Issue
                 .userDetailsService(userInfoManagerConfig)
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .exceptionHandling(ex -> {
